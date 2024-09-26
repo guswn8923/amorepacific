@@ -1,0 +1,353 @@
+.esg{
+    /* font-size: 1.125rem; */
+    .sub_top_hd3{
+        font-family: 'Arita';
+        font-size: 54px;
+    }
+    .sub_contents{
+        padding-top: 100px;
+    }
+    [class*='sub_con_tit_']{
+        font-weight: 700;
+    }
+    .sub_con_tit_lg{
+        font-size: 2.75rem;
+    }
+    .sub_con_tit_md{
+        font-size: 2.125rem;
+    }
+    .sub_con_tit_sm{
+        font-size: 1.25rem;
+    }
+    .con_decs{
+        font-family: 'Pretendard', sans-serif;
+        color: var(--dark-gray);
+    }
+    
+    .commits_customs{
+        padding-top: 100px;
+    }
+
+    .sub_con_card{
+        margin-top: 74px;
+        margin-bottom: 110px;
+        /* justify-content: center; */
+
+        .card_wrap{
+            background: var(--bg-gray);
+            border-radius: 20px;
+            padding: 52px 64px;
+            position: relative;
+        }
+        span{
+            color: var(--secondary);
+            font-family: 'Arita buri';
+            font-weight: 600;
+            position: absolute;
+            top: 26px; left: 26px;
+        }
+        p{ 
+            font-weight: 600;
+            font-size: 20px;
+            max-width: 29.9rem;
+            min-height: 96px;
+        }
+    }
+    .commits_vd{
+        position: relative;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+    }
+    .commits_vd iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0; top: 0;
+        border-radius: 20px;
+    }
+
+
+    section.commits_achivement{
+        padding-top: 160px;
+     
+       small.achv_tit_small{
+            display: block;
+            font-size: 0.88rem;
+            color: var(--medium-gray);
+            margin-bottom: 80px;
+        }
+
+        .achv_card_wrap{
+            background: var(--bg-gray);
+            width: 100%;
+            padding-top: 116px;
+            padding-bottom: 120px;
+            box-sizing: border-box;
+            border-radius: 20px;
+        }
+        figure.achv_card{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            small{
+                position: absolute;
+                left: 50%; top: 50%;
+                transform: translate(-50%, -100%);
+                font-size: 20px;
+                color: var(--primary);
+            }
+            h6{
+                font-family: 'Arita buri'; 
+                font-weight: 600;
+                font-size: 66px;
+                color: var(--primary);
+                line-height: 1;
+                margin-top: 40px;
+                margin-bottom: 20px;
+            }
+            span{
+                font-family: 'Arita buri';
+                font-weight: 600; 
+                font-size: 24px;
+                color: var(--primary);
+                position: absolute;
+                bottom: 28%; right: 50%;
+                transform: translateX(calc(50% + 110px));
+            }
+            p{
+                max-width: 320px;
+                width: 80%;
+                margin: 0 auto;
+                color: var(--dark-gray);
+            }
+        } 
+    }
+  
+    section.commits_performance{
+        padding-top: 160px;
+        .pf_highlight{
+            margin-top: 160px;
+            margin-bottom: 160px;
+            position: relative;
+            .pf_highlight_wrap{
+                border: 2px solid var(--primary);
+                width: 390px;
+                height: 390px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;    
+                align-items: center;
+                margin: 0 auto;
+                background: var(--white);
+            }
+            .pf_highlight_wrap::after{
+                content: '';
+                width: 100%;
+                height: 2px;
+                background: var(--primary);
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                z-index: -10;
+            }
+            p{
+                max-width: 260px;
+                display: inline-block;
+                text-align: center;
+                strong{
+                    color: var(--secondary);
+                }
+            }
+        }
+    }
+
+
+  
+
+    .pf_item{
+        position: relative;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            vertical-align: bottom;
+        }
+    }
+    
+    .pf_item_desc{
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        padding: 40px;
+        background: rgba(0, 0, 0, .25);
+        border-radius: 20px;
+        transition: all 0.5s;
+
+        h6{
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 328px;
+            max-width: 260px;
+        }
+ 
+        p{
+            font-family: 'Pretendard';
+            color: var(--white);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s;
+            line-height: 1.7;
+        }
+        .btn_more_sm{
+            position: absolute;
+            right: 40px; top: 36px;
+            transition: all 0.3s;
+        }
+    }
+    .pf_item_desc::before{
+        content: '';
+        width: 100%;
+        height: 1px;
+        display: block;
+        position: absolute;
+        top: 138px; left: 0;
+        background: rgba(255, 255, 255, .5);
+
+    }
+
+    .pf_item:hover p{
+        transform: none;
+        opacity: 1;
+    }
+    .pf_item:hover .pf_item_desc{
+        background: rgba(0, 0, 0, .4);
+    }
+    .pf_item:hover .btn_more_sm{
+        transform: translateX(5px);
+        background: rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Bootstrap-sm-(Tablet)––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (max-width: 768px) {
+   
+
+
+    /* .sub_top_bg{
+        max-width: 90%;
+    }
+    .sub_top_bg.on{
+        margin-left: 0;
+        margin-right: 0;
+    }  */
+
+    .esg {
+        .sub_top_hd3 {
+            font-size: 3.5rem;
+        }
+
+        /* TYPOGRAPHY */
+        .sub_con_tit_lg{
+            font-size: 34px;
+            margin-bottom: 40px;
+        }
+        .sub_con_tit_md{
+            margin-bottom: 40px;
+        }
+
+        .sub_con_card {
+            p {
+                font-size: 19px;
+                max-width: 100%;
+                min-height: auto;
+            }
+        }
+        section.commits_achivement {
+            .achv_card_wrap {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+        }
+        section.commits_performance {
+            .pf_highlight {
+                margin-top: 100px;
+                margin-bottom: 100px;
+            }
+        }
+        .pf_item_desc {
+            h6 {
+                font-size: 20px;
+                max-width: 200px;
+                margin-bottom: 200px;
+            }
+            .btn_more_sm{
+                scale: 80%;
+            }
+        }
+    }
+
+}
+
+/* Bootstrap-xs-(Mobile) –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (max-width: 576px) {
+   /* TYPOGRAPHY */
+    .sub_con_tit_lg{
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    .sub_con_tit_md{
+        margin-bottom: 40px;
+    }
+    .sub_con_tit_sm{
+        font-size: 20px;
+    }
+
+
+    .esg {
+        .sub_top_hd3 {
+            font-size: 2.375rem;
+        }
+
+        .sub_con_card {
+            p {
+                font-size: 18px;
+                max-width: 100%;
+                min-height: auto;
+            }
+        }
+        section.commits_achivement {
+            .achv_card_wrap {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+        }
+        section.commits_performance {
+            .pf_highlight {
+                margin-top: 100px;
+                margin-bottom: 100px;
+            }
+        }
+
+/* 여기까지확인 */
+        .pf_item {
+            height: 400px;
+        }
+        .pf_item_desc {
+            padding-right: 46px;
+            padding-left: 65px;
+
+            h6 {
+                font-size: 26px;
+                margin-bottom: 100px;
+                max-width: 260px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,994 @@
+/* MODAL - 강현주
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.mobal {
+  position: fixed;
+  left: 100px;
+  top: 100px;
+  background: 
+  url(../images/modal_bg1.png)no-repeat top left,
+  url(../images/modal_bg2.png)no-repeat right top var(--white);
+  padding: 50px;
+  border-radius: 20px;
+  z-index: 150;
+  color: var(--black);
+  box-shadow: 0 4px 15px rgba(6 , 44, 94, 0.9);
+}
+#cookieMobal{
+  visibility: hidden;
+}
+#cookieMobal p a{
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.mobalhd{
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#cookieMobal .mobalhd img{
+ display: block;
+ max-width: 100%;
+ height: auto;
+}
+.mobalhd > p{
+  margin-top: 10px;
+  text-align: center;
+}
+.modal_title{
+  padding: 20px 0 10px 0; 
+}
+.modal_title span {
+  color: var(--primary);
+  font-weight: bold;
+}
+.popct p span{
+  font-weight: 600;
+}
+.pop_link{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+#cookieMobal .pop_link a{
+  color: #E70771;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.pop_link p {
+  margin-top: 10px;
+}
+.pop_link p img{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+/* 닫기 버튼 스타일 */
+#closeBtn {
+  padding: 5px 10px;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 체크박스 스타일 */
+.cookie{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#check {
+  margin-right: 120px;
+}
+.cookie input[type="checkbox"]{
+  width: 20px;
+  height: 20px;
+}
+
+/* MAIN BANNER - 한태희
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.main_banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.main_banner .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.video > .slide{
+  position: absolute;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+}
+.slide:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0,.35);
+}
+.main_banner .slide video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video_content{
+  position:absolute;
+  top: 40%;
+  left: 10%;
+  color:var(--white);
+  font-family: 'Arita buri';
+  font-weight: 500;
+  z-index: 10;
+  transition: left 0.3s linear, left 0.3s linear;
+}
+.video_content h3{
+  font-size: 1.25rem;
+}
+.video_content h2{
+  font-size: 4.375rem;
+}
+.video_content p {
+  font-family: 'Arita';
+  font-size: 1.25rem;
+  font-weight: 400;
+  width: 400px;
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+.video>li .video_content>* {
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s 0.4s ease-in-out;
+}
+
+.video>li.active .video_content>* {
+  color: #fff;
+  opacity: 1;
+}
+.main_banner .buttons{
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+.progress-btn {
+  width: 4rem;
+  height: 0.25rem;
+  border: none;
+  background: rgba(255, 255, 255, .5);
+  padding: 0;
+  position: relative;
+  border-radius: 0.1rem;
+  overflow: hidden;
+  opacity: 65%;
+  cursor: pointer;
+  transition: width 0.3s linear;
+}
+.progress-btn span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+  width: 0;
+  box-sizing: border-box;
+}
+.main_banner .m_scroll{
+  position: absolute;
+  bottom: 0;
+  right: 6rem;
+  z-index: 10;
+  color: white;
+  transform-origin: right bottom;
+  transform: rotate(90deg);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-family: 'Pretendard';
+  font-weight: 400;
+  line-height: 33px;
+  transition: right 0.3s linear;
+}
+.main_banner .m_scroll .gage{
+  width: 80px;
+  height: 2px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-left: 10px;
+  overflow: hidden;
+}
+.main_banner .m_scroll .gage .gage_bar{
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 55%;
+  height: 100%;
+  background-color: var(--white);
+  animation: mainScroll 0.7s infinite;
+}
+@keyframes mainScroll {to{left: 100%;}}
+
+.main_banner .m_control {
+  position: absolute;
+  width: 20px; height: 20px;
+  bottom: 3.5rem;
+  left: calc(50% + 12rem);
+  transform: translateX(-50%);
+  display: block;
+}
+
+.main_banner .m_control button {
+  color: var(--white);
+  text-transform: uppercase;
+  font-family: 'Pretendard';
+  background: none; border: none;
+  font-size: 1.25rem; cursor: pointer;
+  position: relative; width: 100%; height: 100%;
+}
+
+.main_banner .m_control.play button .rectangle {
+  position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+}
+
+.main_banner .m_control.play button .rectangle span {
+  width: 3px; height: 18px; display: inline-block; background: var(--white);
+}
+
+.main_banner .m_control.play button .rectangle span:nth-child(2) {
+  margin-left: 0;
+}
+
+.main_banner .m_control.pause button .triangle {
+  position: absolute; width: 100%; height: 100%;
+  top: 0; left: 1px;
+}
+
+.main_banner .m_control.pause button .triangle span {
+  border-radius: 2px; position: absolute; left: 10%; top: 10%;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-left: 12px solid var(--white);
+  border-right: 12px solid transparent;
+}
+
+/* NEWS - 한태희
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+main .news{
+  display: flex;
+  position: relative;
+}
+.news .btn_more{
+  position: absolute;
+  right: 0;
+}
+.n_left{
+  width: 45%;
+}
+.n_right{
+  width: 55%;
+  margin-top: 128px;
+}
+.news_list{
+  border-top: 1px solid var(--light-gray);
+}
+.news_list li{
+  border-bottom: 1px solid var(--light-gray);
+}
+.news_list li a{
+  display: block;
+  padding: 2.625rem;
+}
+.news_list li .n_imagebox{
+  position: absolute;
+  left: 0;
+  bottom: 20%;
+  z-index: 10;
+  width: 24rem;
+  height: 28.13rem;
+  overflow: hidden;
+}
+.news_list li:nth-child(1) img{
+  visibility: visible;
+  opacity: 1;
+  transform:none;
+}
+.news_list li img{
+  visibility: hidden;
+  opacity: 0;
+  transform:translateX(-50px);
+  transition:0.3s;
+}
+.news_list li:hover img{
+  visibility: visible;
+  opacity: 1;
+  transform:none;
+}
+.n_textbox{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.n_textbox h3{
+  font-family: 'Arita';
+  font-weight: 600;
+  font-size: 1.563rem;
+
+}
+.n_textbox p{
+  font-family: 'Pretendard';
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.65;
+}
+.n_textbox span{
+  font-family: 'Arita';
+  font-weight: 500;
+  font-size: 1rem;
+
+  color: var(--medium-gray);
+}
+.n_textbox span b{
+  color: var(--primary);
+  font-size: 1.125rem;
+  position: relative;
+}
+.n_textbox span b::after{
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  background: var(--medium-gray);
+  position: absolute;
+  right: -15px; bottom: 0;
+}
+.n_textbox span small{
+  margin-left: 20px;
+  font-size: 1rem;
+}
+
+/* STORY - 홍은진
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.story{
+  text-align: center;
+  h2{
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .nav{
+    .nav-link{
+      color: var(--medium-gray);
+    }
+    .nav-link.active{
+      color: var(--black);
+      border-bottom-color: var(--primary);
+    }
+    /* .nav-link:hover{
+      border-bottom: none;
+    }  */
+  }
+  .sec_desc_md{
+    max-width: 510px;
+    width: 80%;
+    margin: 0 auto 50px;
+  }
+  .story_list{
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); */
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 17.63rem;
+    grid-gap: 1.5rem;
+    grid-template-areas: 
+    'a a b c'
+    'a a d e'
+  }
+  .story_list li{
+    border-radius: 1.25rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: background-size 0.5s ease;
+    position: relative;
+  }
+  /* li:hover{
+    background-size: 110%;
+  } */
+
+  .st_list_1{
+    grid-area: a;
+    background-image: url(../images/story_bg1.jpg);
+  }
+  .st_list_2{
+    grid-area: b;
+    background-image: url(../images/story_thumb1_bg1.jpg);
+  }
+  .st_list_3{
+    grid-area: c;
+    background-image: url(../images/story_thumb1_bg2.jpg);
+  }
+  .st_list_4{
+    grid-area: d;
+    background-image: url(../images/story_thumb1_bg3.jpg);
+  }
+  .st_list_5{
+    grid-area: e;
+    background-image: url(../images/story_thumb1_bg4.jpg);
+  }
+  .st_list_6{
+    grid-area: a;
+    background-image: url(../images/story_bg2.jpg);
+  }
+  .st_list_7{
+    grid-area: b;
+    background-image: url(../images/story_thumb2_bg1.jpg);
+  }
+  .st_list_8{
+    grid-area: c;
+    background-image: url(../images/story_thumb2_bg2.jpg);
+  }
+  .st_list_9{
+    grid-area: d;
+    background-image: url(../images/story_thumb2_bg3.jpg);
+  }
+  .st_list_10{
+    grid-area: e;
+    background-image: url(../images/story_thumb2_bg4.jpg);
+  }
+
+  .story_lg_desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    small{
+      font-family: 'Arita buri';
+      color: var(--medium-gray);
+      font-size: 1.125rem;
+      display:block;
+    }
+    p{
+      font-size: 1.25rem;
+      max-width: 408px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px); 
+      transition: all 0.5s;
+    }
+ 
+    > *{
+      position: relative;
+      z-index: 10;
+    }
+  }
+  .story_lg_desc::after{
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .st_list_6 .story_lg_desc::after{
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .story_lg:hover{
+    p{
+      transform: none; 
+      opacity: 1;
+    }
+  }
+  .story_lg .btn_more_w{
+    position: absolute;
+    right: 50%;
+    bottom: 80px;
+    transform: translateX(50%);
+  }
+
+  .story_thumb{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   justify-content: center;
+   align-items: center;
+   > *{
+    position: relative;
+    z-index: 10;
+  }
+   p{
+    max-width: 226px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s;
+   }
+  .btn_more_sm{
+    position: absolute;
+    right: 50%;
+    bottom: 40px;
+    transform: translateX(50%);
+  }
+  }
+  .story_thumb::after{
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, .3);
+    transition: all 0.5s;
+  }
+  .story_thumb:hover p{
+      opacity: 1;
+      transform: translateY(0);
+  }
+  .story_thumb:hover::after{
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .story_list2{
+    color: var(--white);
+  }
+  .story_thumb2::after{
+    background: rgba(0, 0, 0, .3);
+  }
+  .story_thumb2:hover::after{
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .story_thumb2 a{
+    color: var(--white);
+  }
+
+}
+
+/* SPACE - 홍은진
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.space {
+  position: relative;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+  .content_wrapper{
+    background: rgba(6, 44, 94, .8); 
+    position: relative;
+
+    h2{
+      position: absolute;   
+      top: 143px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+  }
+  .atc_wrapper{
+    display: flex;
+    justify-content: space-between;
+
+    article::before{
+      content: '';
+      display: block;
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: rgba(255, 255, 255, 0.4);
+      z-index: 10;
+      transform: scaleY(0);
+      transition: all 1s ease-in-out;
+    }
+    article:first-child::before{
+      transform-origin: bottom;
+    }
+    article:nth-child(2)::before{
+      transform-origin: top;
+    }
+    article{
+      width: 33.3333%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+
+      > * {
+        position: relative;
+        z-index: 10;
+      }
+      svg{
+        margin-top: 127px;
+      }
+      svg > *{
+        stroke-dasharray: 160;
+        stroke-dashoffset: 160; 
+      }
+
+      h4{
+        margin-top: 80px;
+        margin-bottom: 52px;
+      }
+      p{
+          max-width: 376px;
+          width: 85%;
+          margin: 0 auto;
+          font-size: 1.375rem;
+          font-weight: 300;
+      }
+      .btn_more{
+        opacity: 0;
+        margin-top: 74px;
+        transform: translateY(100px);
+        transition: all 0.5s;
+      }
+    }
+    article::after{
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+      background: 
+      linear-gradient(rgba(6,44,94,0.8), rgba(6,44,94,1));
+      opacity: 1;
+      transition: all 0.5s;
+    }
+    .space_1{
+      background-image: url(../images/space_amore1.jpg);
+    }
+    .space_2{
+      background-image: url(../images/space_amore2.jpg);
+    }
+    .space_3{
+      background-image: url(../images/space_amore3.jpg);
+    }
+    article:hover::after{
+      opacity: 0.5;
+    }
+    article:hover .btn_more{
+      opacity: 1;
+      transform: none;
+    }
+
+  }
+}
+.space.active svg > *{
+  animation: line2 1s linear forwards;	
+}
+
+.space.active .atc_wrapper article::before{
+  transform: scaleY(1);
+}
+
+.sp1_line11{animation-delay: 1s;}
+.sp1_line10{animation-delay: 0.8s;}
+.sp1_line9{animation-delay: 0.6s;}
+.sp1_line8{animation-delay: 0.4s;}
+.sp1_line7{animation-delay: 0.2s}
+.sp1_line1{animation-delay: 0;}
+.sp1_line2{animation-delay: 0.2s;}
+.sp1_line3{animation-delay: 0.4s;}
+.sp1_line4{animation-delay: 0.6s;}
+.sp1_line5{animation-delay: 0.8s;}
+.sp1_line6{animation-delay: 1s;}
+
+.sp3_line7{animation-delay: 0;}
+.sp3_line6{animation-delay: 0.2s;}
+.sp3_line5{animation-delay: 0.3s;}
+.sp3_line4{animation-delay: 0.4s;}
+.sp3_line3{animation-delay: 0.6s;}
+.sp3_line2{animation-delay: 0.8s;}
+.sp3_line1{animation-delay: 1s;}
+
+@keyframes line2{
+  0%{stroke-dashoffset: 160;}
+  100%{stroke-dashoffset: 0;}
+}
+ 
+
+/* BRANDS - 강현주
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.brands h2{
+  margin-bottom: 50px;
+}
+.brands .button {
+  width: 270px;
+  position: relative;
+  margin-left: 24px;
+}
+.button ul{
+  padding: 0 5px;
+}
+.button ul li{
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.button .tt_li .draggable{
+  padding: 0 !important;
+}
+.button .tt_li a{
+  margin: 0 10px;
+  color: var(--dark-gray);
+  padding-bottom: 5px;
+  transition:color 0.3s ease-out;
+}
+.button ul li:hover a, .button ul li a.active{
+  color: var(--black);
+  border-bottom: 3px solid var(--primary);
+}
+.button button{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+}
+.button .next {
+  left: 100%;
+}
+.button .prev {
+  right: 100%;
+}
+/*brand logo slide */
+.brands_wrapper {
+  position: relative;
+}
+.brands_wrp {
+  overflow: hidden;
+}
+.brands_wrapper ul {
+  display: flex;
+  padding-top: 50px;
+}
+.brands_wrapper ul li{
+  border-right: 1px solid var(--dark-gray);
+}
+.brands_wrapper ul li a{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.brands_wrapper ul li img {
+  transition: 0.3s ease-out;
+  opacity: 0.5;
+}
+.brands_wrapper ul p{
+  text-align: center;
+  margin-top: 68px;
+  color: var(--light-gray);
+}
+.brands_wrapper ul li:hover img{
+  opacity: 1;
+}
+.brands_wrapper ul li:hover p{
+  color: var(--black);
+}
+.brands_wrapper .btn_more {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 100px);
+}
+.brands_wrapper ul li.slick-current img{
+  opacity: 1;
+}
+.brands_wrapper ul li.slick-current p{
+  color: black;
+}
+
+/* SNS - 배유나
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.sns_wrap .sns_slide {left: -12px;}
+
+.sns_wrap .sns_slide li {
+  margin-left: 24px; margin-right: auto; padding: 1rem 0;
+  transition: transform 0.3s ease;
+}
+
+.sns_wrap .sns_slide li:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.video_slide {
+  position: relative;
+  width: 100%;
+  padding-bottom: 177.78%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video_slide video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.sns_description {margin-top: 15px;
+  span {color: var(--primary); font-weight: 700; font-size: 0.9375rem;}
+  h4 {font-weight: 700;}
+  p {line-height: 1.25rem; color: var(--dark-gray); font-weight: 300;}
+}
+
+.slick-arrow {
+  position: absolute;
+  z-index: 10;
+  top: 45%;
+  transform: translateY(-100%);
+  background: rgba(22,22,22,.5);
+  border: none;
+  width: 70px;
+  height: 70px;
+  line-height: 72px;
+  border-radius: 50%;
+  cursor: pointer;
+  i {font-size: 2rem; color: rgba(255,255,255,.5); transition: 0.3s ease;}
+  transition: 0.3s ease;
+}
+
+.slick-arrow:hover {
+  background: rgba(22,22,22,.75);
+  i {color: rgba(255,255,255,.75);}
+}
+
+.slick-prev {
+  left: 24px;
+}
+
+.slick-next {
+  right: 0;
+}
+
+/* SUSTAIN - 홍은진
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.sustain {
+  background: url('../images/sustain_bg.png') center/cover no-repeat;
+  width: 100%;
+  color: var(--white);
+  position: relative;
+
+  >::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .row>* {
+    z-index: 10;
+    border-right: 1px solid rgba(255, 255, 255, .5);
+  }
+
+  h2 {
+    margin-bottom: 100px;
+  }
+
+  .st_con1 p {
+    max-width: 526px;
+    width: 90%;
+  }
+
+  .st_con1 .btn_more {
+    margin-top: 120px;
+  }
+
+  .btn_more_sm {
+    display: none;
+  }
+
+  .st_right {
+    text-align: center;
+    transition: .3s;
+    background: rgba(255, 255, 255, 0);
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .st_right:hover {
+    background: rgba(255, 255, 255, .15);
+  }
+
+  .st_right>a {
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+    color: var(--white);
+  }
+
+  .st_right h4 {
+    margin-top: 72px;
+    margin-bottom: 260px;
+  }
+
+  .st_right p {
+    max-width: 240px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .st_right .bi-download::before {
+    font-size: 3rem;
+    color: var(--white);
+  }
+
+}
+
+
+/* EMPLOY - 강현주
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.employ .employ_wrapper {
+  background:
+    url(../images/employ_bg.jpg)no-repeat;
+  height: 320px;
+  border-radius: 25px;
+  position: relative;
+}
+
+.employ .employ_wrapper:after {
+  content: '';
+  display: block;
+  background: linear-gradient(to left, rgba(6, 44, 94, 0) 0%, #062C5E 80%, #062C5E 100%);
+  width: 100%;
+  height: 320px;
+  border-radius: 25px;
+}
+
+.employ_wrapper img {
+  position: absolute;
+  top: 83px;
+  left: 70px;
+}
+
+.employ_wrapper p,
+.employ_wrapper a {
+  position: absolute;
+  color: var(--white);
+}
+
+.employ_wrapper p {
+  top: 161px;
+  left: 70px;
+  font-size: 2.188rem;
+}
+
+.employ_wrapper a {
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 500;
+  font-size: 1.563rem;
+}

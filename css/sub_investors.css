@@ -1,0 +1,130 @@
+.sub_top_txt{
+    margin-top: 2.5rem;
+}
+.sub_top_hd3{
+    font-family: 'Arita';
+    font-size: 54px;
+}
+.investors tr{
+    border-bottom: 1px solid var(--light-gray);
+}
+.title_list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.investors .dropdown{
+    padding: 0 !important;
+}
+.tab_title ul{
+    display: flex;
+    gap: 20px;
+}
+.tab_title li{
+    font-family: 'Arita', '돋움', sans-serif;
+    font-weight: 500;
+    font-size: 1.25em;
+    color: var(--light-gray);
+}
+.tab_title li:hover{
+    color: var(--black);
+}
+td,
+th {
+text-align: center;
+}
+.td_dl a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: #f5f5f5;
+    border-radius: 25px;
+    font-size: 1.25rem;
+    transition: 0.3s ease-out;
+}
+.td_dl a:hover{
+    background: var(--primary);
+    color: var(--white);
+}
+.investors .dropdown{
+    display: flex;
+    justify-content: end;
+    padding: 15px
+}
+.investors .pagination{
+    display: flex;
+    justify-content: center;
+}
+.numbers {
+	padding: 0;
+	margin: 0 1rem;
+	list-style-type: none;
+	display: flex;
+    padding-top: 55px;
+}
+
+.numbers li a {
+	color: var(--black);
+	padding: .5rem 1rem;
+	text-decoration: none;
+	opacity: .7;
+}
+
+.numbers li a:hover {
+	opacity: 1;
+}
+
+.numbers li a.active {
+	opacity: 1;
+	background: var(--primary);
+	color: var(--white);
+}
+.pagination button{
+    background: none;
+    border: none;
+    padding-top: 55px;
+    color: var(--black);
+}
+/* .pagination button:disabled {
+    color: var(--light-gray) !important; 
+  }
+.pagination button:disabled i{
+    color: var(--light-gray) !important; 
+  } */
+.pagination i{
+	color: var(--black);
+	font-size: 1.5em;
+}
+.pagination button[disabled] i{
+    color: var(--light-gray);
+}
+.nav-link {
+    color: var(--black);
+}
+.nav-link:hover{
+    color:var(--white);
+    background: var(--primary);
+}
+.nav-pills .nav-link.active{
+    background: var(--primary);
+}
+.numbers li a.active{
+    transition: 0.2s 0.1s ease-out;
+}
+@media (max-width:768px){
+    .nav-link {
+        font-size: 1rem;
+    }
+    .tab_title ul{
+        gap: 10px;
+    }
+}
+@media (max-width:576px){
+    .tab_title ul {
+        gap: 5px;
+    }
+   
+}

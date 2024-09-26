@@ -1,0 +1,246 @@
+html {scroll-behavior: smooth;}
+
+article h3 {margin-bottom: 3.125rem;}
+
+.cont_list_wrap {position: relative;}
+
+.subtopbg_warp video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: .25s ease;
+}
+
+.sub_top_bg.on {
+  video {
+      border-radius: 0;
+  }
+}
+
+.history_bar {
+  position: absolute; left: 50%; top: 180px; width: 0.25rem;
+  height: 98.5%; background-color: var(--light-gray);
+}
+
+@media (max-width: 768px){
+  .history_bar {left: 20px;}
+  .cont_list_wrap .cont_list {
+    transform: translateX(10%); transform: translateY(600px); width: 90%;
+  }
+  .history_bar {transform: translateY(600px);}
+  .cont_list_wrap .history_show {left: 45%; transform: translateX(-50%);}
+  .cont_list_wrap .history_show.visible {top: 10%;}
+  .cont_list_wrap .history_show .history_cont {width: 52.59vw; height: 34.45vw;
+  left: 15%;}
+
+  .cont_list_wrap .cont_list .item {
+    padding: 100px 0;
+  }
+
+  .history_show.visible:before {
+    content: '';
+    background: var(--white);
+    width: 600px;
+    height: 350px;
+    position: absolute; top: -10%; left: -20%;
+  }
+  
+  main .cont_nav .inner button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .history_show.visible:before {
+    height: 280px;
+  }
+  .cont_list_wrap .cont_list {
+    width: 100%;
+  }
+  .cont_list_wrap .cont_list .item {
+    padding: 100px 0;
+  }
+}
+
+.history_bar .history_bar_on {
+  width: 100%; height: 0; background: var(--primary); 
+  transition: height 0.1s;
+}
+
+.history_bar .history_bar_on .pointer {
+  width: 1rem; height: 1rem; position: absolute; background: var(--primary); border-radius: 50%;
+  box-shadow: 0 12px 16px 0 rgba(6, 44, 94, .24); left: -.35rem; top: 0;
+  transition: top 0.1s;
+}
+
+.history_bar .history_bar_on .pointer:before {
+  display: block; position: absolute; content: ''; width: 3rem; height: 3rem;
+  background-color: var(--primary); border-radius: 50%; left: -1rem; top: -1rem;
+  left: 50%; top: 50%; transform: translate(-50%, -50%);
+  animation: pin-wave 2s cubic-bezier(1,2,.66,3) infinite;
+}
+
+@keyframes pin-wave {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(.1);
+  }
+  50% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+}
+
+.cont_list {
+  width: 50%; display: flex; flex-direction: column; transform: translateX(100%);
+  padding-left: 5rem; z-index: 80;
+}
+.cont_list .item {
+  display: flex; flex-direction: column; gap: 40px; padding: 120px 0;
+}
+.cont_list .item h4 {
+  font-size: 5rem; line-height: 5rem; font-weight: 700; color: var(--light-gray);
+  transition: 0.3s linear;
+}
+.cont_list .item.active h4 {color: var(--primary);}
+.cont_list .item p {
+  font-size: 1.5rem; line-height: 2.25rem; font-weight: 700; width: 70%;
+  word-wrap: break-word; word-break: keep-all;
+}
+
+@keyframes ZoomOut {
+  from {transform: translateY(30px) scale(1.5)}
+  to {transform: translateY(0) scale(1)}
+}
+
+.history_show {
+  box-sizing: border-box; 
+  translate: none;
+  rotate: none;
+  scale: none;
+  left: 0;
+  top: 0.5%;
+  width: 50%;
+  max-height: 600px;
+  height: 600px;
+  padding: 0px 90.1875px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 10;
+}
+
+.history_show.visible {
+  top: 30%;
+  position: fixed;
+}
+
+.history_show .history_cont {
+  margin: 0 auto;
+  z-index: 10;
+  transition: border-radius .5s;
+  opacity: 1;
+  visibility: inherit;
+  height: 19.1145vw;
+  width: 29.1666vw;
+  left: 23%;
+  top: 0;
+  position: absolute;
+  object-fit: contain; border-radius: .8rem;
+}
+
+.history_show .history_cont .img_wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: .8rem; box-sizing: border-box;
+}
+
+.history_show .history_cont .img_wrap .img_overlay {
+  box-sizing: border-box;
+}
+
+.history_show .history_cont .img_wrap .img_overlay .img_cont {
+  border-radius: .8rem; position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: ellipse(300% 300% at 50% 100%);
+  transition: clip-path 1.3s, border-radius 1s;
+  isolation: isolate;
+  overflow: hidden; box-sizing: border-box;
+}
+
+.history_show .history_cont .img_wrap .img_overlay .img_cont > div {
+  box-sizing: border-box;
+}
+
+.history_show .history_cont .img_wrap .img_overlay .img_cont img.motion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: clip-path, transform;
+  clip-path: ellipse(50% 0% at 50% 100%);
+  transition: clip-path 1.5s;
+  transition: 1s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.history_show .history_cont .img_wrap .img_overlay .img_cont img.motion.show {
+  clip-path: ellipse(300% 300% at 50% 100%);
+  animation: ZoomOut 1.3s;
+  animation-fill-mode: forwards;
+}
+
+.history_show .history_cont .img_wrap .img_overlay .img_cont.disShowMotion {
+  clip-path: ellipse(50% 0% at 50% 100%);
+  transition: clip-path 1.3s .5s;
+}
+
+.history_show .history_cont .img_wrap .img_overlay .img_cont.showMotion div:first-of-type img {
+  animation: ZoomOut 1.3s;
+  animation-fill-mode: forwards;
+}
+
+.cont_nav {
+  display: flex; justify-content: center; border-bottom: 1px solid var(--light-gray);
+  width: 100%; background: var(--white); z-index: 100; transform: translateY(54px); top: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cont_nav.visible {position: fixed; z-index: 20;}
+
+.cont_nav .inner {display: flex; align-items: flex-end; height: 70px;}
+
+.cont_nav .inner li button {
+  background: none; border: none; color: var(--light-gray); width: 149px; height: 60px;
+  cursor: pointer; font-weight: 600; font-size: 1.25rem;
+  position: relative; transition: color 0.3s ease-in;
+}
+
+.cont_nav .inner button.active {color: var(--primary);}
+
+.cont_nav .inner button:before {
+  content: ''; position: absolute; left: 50%; top: 6px; border-radius: 50%;
+  background: var(--primary); width: 8px; height: 8px;
+  visibility: hidden; transition: visibility 0.3s ease;
+}
+
+.cont_nav .inner button:after {
+  content: ''; width: 1px; height: 20px; position: absolute; background: var(--light-gray);
+  right: 0;
+}
+
+.cont_nav .inner button.active:before {visibility: visible;}
